@@ -1,8 +1,12 @@
 from django.conf.urls.defaults import patterns, url
-from django.conf.urls.defaults import patterns
-from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+from route import route 
 
 urlpatterns = patterns('subscriptions.views',
-    url(r'^$', 'subscribe', name='subscribe'),
+    route(r'^$', GET='new', POST='create', name='subscribe'),
     url(r'^(\d+)/sucesso/$', 'success', name='success'),
 )
+
+#urlpatterns = patterns('subscriptions.views',
+#    url(r'^$', 'subscribe', name='subscribe'),
+#    url(r'^(\d+)/sucesso/$', 'success', name='success'),
+#)
